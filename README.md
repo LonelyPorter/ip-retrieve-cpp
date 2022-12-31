@@ -18,3 +18,6 @@ The C++ standard library is typically provided as a separate package from the co
 ## Compile/Build
 ### Simple Hello world
 `clang test.cpp` will get you executable `a.exe`
+
+### IP-retrieve
+`clang ip-retrieve.cpp`
