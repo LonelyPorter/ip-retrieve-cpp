@@ -18,13 +18,20 @@ The C++ standard library is typically provided as a separate package from the co
 ## Compile/Build
 We will be using [CMake](https://cmake.org/download/) for building our program and [Ninja](https://ninja-build.org/) as the build generator
 
-Generate build files: `cmake -S . -B build -G Ninja [--fresh]`  
-Build the program(executable): `cmake --build build [--clean-first]`  
+Generate build files: `cmake -S . -B build -G Ninja [-DCMAKE_BUILD_TYPE=Release] [--fresh]`[^2]  
+Build the program(executable): `cmake --build build [--clean-first]`[^3]
 
-*inside `[]` is the option flag that can put in command line*  
+To remove build files and executable, you can just delete those directories `rm -rf build/ bin/`
+
+*Inside `[]` is the option flag that can put in command line*  
+*Use VSCode extension to skip all the command lines typing* 
 
 ## Run
 `./bin/ip-retrieve.exe input.txt`
 
 
 [^1]: *For easy workflow, might as well just download visual studio and build using that*
+[^2]: `-DCMAKE_BUILD_TYPE=Release`: Ninja generate default build type is debug (or because is GNU like)  
+      `--fresh`: is the re-generate the build files  
+[^3]: `--clean-first` will clean the bin before generating the executable program
+      or run with `--target clean` to just clean (only clean based on the build files)
